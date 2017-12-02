@@ -15,6 +15,13 @@ let data = `5048	177	5280	5058	4504	3805	5735	220	4362	1809	1521	230	772	1088	17
 296	306	1953	3538	248	1579	4326	2178	5021	2529	794	5391	4712	3734	261	4362
 2426	192	1764	288	4431	2396	2336	854	2157	216	4392	3972	229	244	4289	1902`
 
-const solve = (data) => data.split('\n').map((r) => (row = r.split('\t').map((v) => parseInt(v))) && row.reduce((a, b) => Math.max(a, b)) - row.reduce((a, b) => Math.min(a, b))).reduce((a, b) => a + b)
+const solve = (data) => data
+    .split('\n')
+    .map((r) => 
+         (row = r
+          .split('\t')
+          .map((v) => parseInt(v))) && 
+         row.reduce((a, b) => Math.max(a, b)) - row.reduce((a, b) => Math.min(a, b)))
+    .reduce((a, b) => a + b)
 
 console.log(solve(data))
